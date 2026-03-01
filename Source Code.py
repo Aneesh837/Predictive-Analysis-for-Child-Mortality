@@ -245,3 +245,22 @@ if st.button("Show Random Forest Results"):
     roc_fig = plot_multi_class_roc(rf_model, X_test, y_test, 3)
     st.pyplot(roc_fig)
 
+# Model Accuracy
+if st.button("Show Model Comparison"):
+    st.subheader("Model Accuracy Comparison")
+    
+    models = ['Logistic Regression', 'SVM', 'Random Forest']
+    accuracies = [log_accuracy, svm_accuracy, rf_accuracy]
+    
+    fig, ax = plt.subplots(figsize=(8, 6))
+    sns.barplot(x=models, y=accuracies, palette='Set2', ax=ax)
+    
+    ax.set_title("Model Comparison - Accuracy")
+    ax.set_xlabel("Models")
+    ax.set_ylabel("Accuracy")
+    ax.set_ylim(0.8, 1.0)
+    
+    st.pyplot(fig)
+    plt.clf()
+
+
