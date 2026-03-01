@@ -25,7 +25,7 @@ else:
 @st.cache_data
 def load_data():
     # Update this path to your dataset location
-    df = pd.read_csv(r"C:\Users\madar\OneDrive\Desktop\Project\child.csv.csv")
+    df = pd.read_csv("child.csv")
     return df
 
 df = load_data()
@@ -244,3 +244,4 @@ if st.button("Show Random Forest Results"):
     st.write("ROC Curve:")
     roc_fig = plot_multi_class_roc(rf_model, X_test, y_test, 3)
     st.pyplot(roc_fig)
+
