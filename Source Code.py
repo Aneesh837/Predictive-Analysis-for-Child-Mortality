@@ -253,14 +253,16 @@ if st.button("Show Model Comparison"):
     accuracies = [log_accuracy, svm_accuracy, rf_accuracy]
     
     fig, ax = plt.subplots(figsize=(8, 6))
-    sns.barplot(x=models, y=accuracies, palette='Set2', ax=ax)
+    sns.barplot(x=models, y=accuracies, color='#66C2A5', ax=ax)
     
     ax.set_title("Model Comparison - Accuracy")
     ax.set_xlabel("Models")
     ax.set_ylabel("Accuracy")
     ax.set_ylim(0.8, 1.0)
+    ax.set_yticks([0.80, 0.82, 0.84, 0.86, 0.88, 0.90, 0.92, 0.94, 0.96, 0.98, 1.00])
     
     st.pyplot(fig)
     plt.clf()
+
 
 
